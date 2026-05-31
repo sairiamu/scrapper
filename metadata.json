@@ -1,0 +1,6 @@
+{
+  "name": "Custom Web Scraper",
+  "description": "An interactive web scraping application utilizing a Claymorphic and Glassmorphic interface with a high-fidelity scraping engine.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

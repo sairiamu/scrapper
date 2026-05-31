@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Animations with cubic-bezier elastic bounce */
+@keyframes morphShape {
+  0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+  34% { border-radius: 70% 30% 50% 50% / 30% 60% 40% 70%; }
+  67% { border-radius: 50% 60% 30% 70% / 50% 30% 70% 50%; }
+  100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+}
+
+@keyframes pulseBorder {
+  0%, 100% { border-color: rgba(139, 176, 45, 0.2); box-shadow: 0 0 0 0 rgba(139, 176, 45, 0.4); }
+  50% { border-color: rgba(139, 176, 45, 1); box-shadow: 0 0 20px 4px rgba(139, 176, 45, 0.2); }
+}
+
+@keyframes progressFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-morph {
+  animation: morphShape 8s ease-in-out infinite;
+}
+
+.animate-pulse-border {
+  animation: pulseBorder 2s ease-in-out infinite;
+}
+
+.animate-progress-stripe {
+  background-size: 200% auto;
+  animation: progressFlow 2s linear infinite;
+}
+
+/* Transition bounce presets */
+.bounce-hover-btn {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bounce-hover-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+.bounce-hover-btn:active {
+  transform: translateY(1px) scale(0.97);
+}
+
+/* Claymorphic utilities */
+.theme-radial-dark {
+  background: radial-gradient(circle at top left, #1a1a1a, #000000);
+}
+
+.clay-card {
+  background: #8BB02D;
+  border-radius: 35px;
+  box-shadow: 12px 12px 24px #0a0a0a, 
+              inset 8px 8px 16px rgba(255,255,255,0.3), 
+              inset -8px -8px 16px rgba(0,0,0,0.2);
+}
+
+.clay-input {
+  background: #111;
+  border-radius: 20px;
+  box-shadow: inset 4px 4px 8px #000, 
+              inset -2px -2px 6px rgba(255,255,255,0.05);
+}
+
+.clay-button {
+  background: #8BB02D;
+  border-radius: 24px;
+  box-shadow: 8px 8px 16px #000,
+              inset 6px 6px 10px rgba(255,255,255,0.4),
+              inset -6px -6px 10px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.status-ring {
+  background: conic-gradient(from 0deg, #8BB02D, transparent 60%, #8BB02D);
+  mask: radial-gradient(transparent 60%, black 61%);
+}
+
+.clay-card-dark {
+  background: rgba(16, 20, 10, 0.65);
+  box-shadow: 
+    0 20px 40px -10px rgba(0, 0, 0, 0.6),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.08),
+    inset -3px -3px 8px rgba(0, 0, 0, 0.5);
+}
+
+.clay-card-light {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 
+    0 16px 32px -10px rgba(139, 176, 45, 0.15),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.9),
+    inset -3px -3px 8px rgba(139, 176, 45, 0.12);
+}
+
+/* Tactile inputs */
+.clay-input-dark {
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 
+    inset 2px 2px 5px rgba(0, 0, 0, 0.6),
+    inset -1px -1px 2px rgba(255, 255, 255, 0.03);
+}
+
+.clay-input-light {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    inset 2px 2px 5px rgba(139, 176, 45, 0.08),
+    inset -1px -1px 2px rgba(255, 255, 255, 0.7);
+}
+
+/* Claymorphic Buttons */
+.clay-btn-lime {
+  background: #8BB02D;
+  color: #000000;
+  box-shadow: 
+    0 8px 24px -4px rgba(139, 176, 45, 0.4),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.45),
+    inset -3px -3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.clay-btn-lime:hover {
+  background: #9cc434;
+  box-shadow: 
+    0 12px 28px -2px rgba(139, 176, 45, 0.5),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.6),
+    inset -3px -3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.clay-btn-dark {
+  background: #1d1e1a;
+  box-shadow: 
+    0 8px 16px -4px rgba(0, 0, 0, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.06),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.clay-btn-dark:hover {
+  background: #252721;
+  box-shadow: 
+    0 10px 20px -2px rgba(0, 0, 0, 0.6),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.08),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.clay-btn-light {
+  background: #f4f6f0;
+  box-shadow: 
+    0 8px 16px -4px rgba(139, 176, 45, 0.1),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(139, 176, 45, 0.08);
+}
+
+.clay-btn-light:hover {
+  background: #e9ede3;
+  box-shadow: 
+    0 10px 20px -2px rgba(139, 176, 45, 0.15),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(139, 176, 45, 0.05);
+}
+
+/* Simple helper for glassmorphism backdrop */
+.frosted-glass {
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+}
+
+.scroller-custom::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scroller-custom::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 9999px;
+}
+
+.scroller-custom::-webkit-scrollbar-thumb {
+  background: rgba(139, 176, 45, 0.3);
+  border-radius: 9999px;
+}
+
+.scroller-custom::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 176, 45, 0.6);
+}
